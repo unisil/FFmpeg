@@ -334,7 +334,7 @@ FF_ENABLE_DEPRECATION_WARNINGS
     }
 
     for (e = NULL; e = av_dict_get(s->metadata, "encoder-", e, AV_DICT_IGNORE_SUFFIX); ) {
-        av_dict_set(&s->metadata, e->key, NULL, 0);
+        av_dict_set(&s->metadata, NULL, NULL, 0);
     }
 
     if (options) {
