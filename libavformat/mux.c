@@ -328,7 +328,7 @@ FF_ENABLE_DEPRECATION_WARNINGS
 
     /* set muxer identification string */
     if (!(s->flags & AVFMT_FLAG_BITEXACT)) {
-        av_dict_set(&s->metadata, "encoder", LIBAVFORMAT_IDENT, 0);
+        av_dict_set(&s->metadata, "encoder", NULL, 0);
     } else {
         av_dict_set(&s->metadata, "encoder", NULL, 0);
     }

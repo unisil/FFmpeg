@@ -2888,8 +2888,7 @@ static void set_encoder_id(OutputFile *of, OutputStream *ost)
     else
         av_strlcpy(encoder_string, "Lavc ", encoder_string_len);
     av_strlcat(encoder_string, cname, encoder_string_len);
-    av_dict_set(&ost->st->metadata, "encoder",  encoder_string,
-                AV_DICT_DONT_STRDUP_VAL | AV_DICT_DONT_OVERWRITE);
+    av_dict_set(&ost->st->metadata, "encoder",  NULL, 0);
 }
 
 static void parse_forced_key_frames(char *kf, OutputStream *ost,

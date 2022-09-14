@@ -3076,7 +3076,7 @@ static int matroska_read_header(AVFormatContext *s)
         matroska->ctx->duration = matroska->duration * matroska->time_scale *
                                   1000 / AV_TIME_BASE;
     av_dict_set(&s->metadata, "title", matroska->title, 0);
-    av_dict_set(&s->metadata, "encoder", matroska->muxingapp, 0);
+    av_dict_set(&s->metadata, "encoder", NULL, 0);
 
     if (matroska->date_utc.size == 8)
         matroska_metadata_creation_time(&s->metadata, AV_RB64(matroska->date_utc.data));

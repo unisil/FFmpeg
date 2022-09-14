@@ -2166,7 +2166,7 @@ static void mov_parse_stsd_video(MOVContext *c, AVIOContext *pb,
         avio_skip(pb, 31 - len);
 
     if (codec_name[0])
-        av_dict_set(&st->metadata, "encoder", codec_name, 0);
+        av_dict_set(&st->metadata, "encoder", NULL, 0);
 
     /* codec_tag YV12 triggers an UV swap in rawdec.c */
     if (!strncmp(codec_name, "Planar Y'CbCr 8-bit 4:2:0", 25)) {
